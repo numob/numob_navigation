@@ -1,0 +1,14 @@
+global_costmap:
+   global_frame: /map
+   robot_base_frame: /base_link
+   update_frequency: 1.0
+   publish_frequency: 0.5
+   static_map: true
+   transform_tolerance: 10
+   resolution: 0.025 #it is enough to keep it the same as the resolution of the map provided to navigation stack.
+   width: 25.6
+   height: 25.6
+   plugins:
+     - {name: static_layer,            type: "costmap_2d::StaticLayer"}
+     - {name: obstacle_layer,          type: "costmap_2d::VoxelLayer"}
+     - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
